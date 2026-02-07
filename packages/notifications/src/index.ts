@@ -1,9 +1,18 @@
 /**
- * Notifications Package
+ * @frontal-cloud/notifications
+ *
+ * Unified multi-channel notifications for Frontal Cloud.
+ * Supports Email, SMS, and Push notifications with delivery tracking.
  */
 
-export const version = '0.0.0';
-
-export function notifications() {
-  return 'Notifications initialized';
-}
+export { Notifications } from "./client";
+export { DEFAULT_NOTIFICATIONS_BASE_URL, VERSION } from "./constants";
+export type {
+	INotificationsClient,
+	SendNotificationOptions,
+	NotificationStatus,
+	NotificationChannel,
+	NotificationRecipient,
+	NotificationPayload,
+	NotificationsConfig,
+} from "./types";

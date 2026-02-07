@@ -1,9 +1,21 @@
 /**
- * Compute Package
+ * @frontal-cloud/compute
+ *
+ * Manage long-lived workloads on Frontal Cloud.
  */
 
-export const version = '0.0.0';
-
-export function compute() {
-  return 'Compute initialized';
-}
+export {
+	getService,
+	configure,
+	createService,
+	listServices,
+	restartService,
+} from "./api";
+export { Compute } from "./client";
+export { VERSION, DEFAULT_COMPUTE_BASE_URL } from "./constants";
+export type {
+	Service,
+	ServiceMetrics,
+	ServiceLog,
+	ComputeConfig,
+} from "./types";

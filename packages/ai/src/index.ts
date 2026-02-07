@@ -1,9 +1,19 @@
 /**
- * AI Package
+ * @frontal-cloud/ai
+ *
+ * A powerful, type-safe AI SDK for Frontal Cloud.
+ * Provides unified access to LLMs, embeddings, and more.
  */
 
-export const version = '0.0.0';
-
-export function ai() {
-  return 'AI initialized';
-}
+export { generateText, streamText, embed } from "./api";
+export { AI } from "./client";
+export { VERSION, DEFAULT_AI_BASE_URL } from "./constants";
+export type {
+	Message,
+	GenerateTextOptions,
+	GenerateTextResult,
+	StreamTextOptions,
+	EmbedOptions,
+	EmbedResult,
+	AIConfig,
+} from "./types";
