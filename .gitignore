@@ -46,3 +46,7 @@ bun-debug.log*
 *.swp
 *.bak
 .frontal-biome-temp.json
+
+# IDE
+.cursor
+*.tsbuildinfo
