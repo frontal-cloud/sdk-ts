@@ -13,7 +13,16 @@ Provides an abstraction layer for distributed compute tasks, allowing runners to
 ### 3. Functions (`@frontal-cloud/functions`)
 A serverless functions orchestration layer, enabling developers to deploy and trigger functions easily.
 
-### 4. Storage (`@frontal-cloud/storage`)
+### 4. Flags (`@frontal-cloud/flags`)
+Feature flags and configuration, enabling runtime toggles and gradual rollouts.
+
+### 5. Logging (`@frontal-cloud/logging`)
+Structured logging utilities for application and request-level logs.
+
+### 6. Notifications (`@frontal-cloud/notifications`)
+Notification delivery (email, push, etc.) and management.
+
+### 7. Storage (`@frontal-cloud/storage`)
 An interface for interacting with various storage providers (S3, local, etc.) in a unified way.
 
 ## Build System

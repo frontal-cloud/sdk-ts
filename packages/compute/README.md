@@ -1,6 +1,6 @@
 # @frontal-cloud/compute
 
-Distributed compute capabilities for the SDK.
+Manage long-lived workloads (Services) on Frontal Cloud with ease. This package provides a robust, type-safe interface for deploying, scaling, and monitoring containerized applications.
 
 ## Installation
 
@@ -10,20 +10,64 @@ bun add @frontal-cloud/compute
 
 ## Features
 
-- **Distributed Execution**: Run code segments across a cluster.
-- **Resource Management**: Efficiently allocate and manage compute resources.
-- **Scalability**: Seamlessly scale your compute tasks.
+- **Service Lifecycle**: Create, update, restart, and delete services.
+- **Monitoring**: Real-time metrics for CPU and memory usage.
+- **Observability**: Access stdout/stderr logs from your running services.
+- **Auto-Scaling**: Configure scaling policies directly via the SDK.
+- **Health Checks**: Define custom health check paths and intervals.
 
 ## Usage
 
-```typescript
-import { Compute } from "@frontal-cloud/compute";
+### Creating a Service
 
-const compute = new Compute();
-// ... use compute
+```typescript
+import { createService } from '@frontal-cloud/compute';
+
+const service = await createService({
+  name: 'my-api',
+  image: 'nginx:latest',
+  cpu: 0.5,
+  memory: 512,
+  networking: {
+    port: 80,
+    public: true,
+  },
+});
+
+console.log(`Service created: ${service.id}`);
 ```
 
-## Documentation
+### Monitoring Metrics
 
-- [API Reference](./docs/API.md)
-- [Examples](./docs/EXAMPLES.md)
+```typescript
+import { Compute } from '@frontal-cloud/compute';
+
+const compute = new Compute();
+const metrics = await compute.getMetrics('my-service-id');
+
+console.log(`CPU Usage: ${metrics.cpuUsage}%`);
+console.log(`Memory Usage: ${metrics.memoryUsage}MB`);
+```
+
+### Accessing Logs
+
+```typescript
+const logs = await compute.getLogs('my-service-id', { limit: 50 });
+logs.forEach(log => {
+  console.log(`[${log.timestamp}] ${log.stream}: ${log.message}`);
+});
+```
+
+### Restarting a Service
+
+```typescript
+await compute.restartService('my-service-id');
+```
+
+## API Reference
+
+The SDK exposes both a functional API (for quick tasks) and a `Compute` class (for more complex integrations). All inputs are validated at runtime using Zod.
+
+## License
+
+MIT

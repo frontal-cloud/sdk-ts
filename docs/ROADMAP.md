@@ -4,7 +4,7 @@ This document outlines the planned work and future goals for the SDK Monorepo.
 
 ## Phase 1: Foundation (Current)
 - [x] Initial monorepo setup with Bun and Turborepo.
-- [x] Core packages initialization: AI, Compute, Functions, Storage.
+- [x] Core packages: AI, Compute, Functions, Flags, Logging, Notifications, Storage.
 - [x] Standardized CI/CD workflow and release process.
 
 ## Phase 2: Core Enhancements (Q1 2026)

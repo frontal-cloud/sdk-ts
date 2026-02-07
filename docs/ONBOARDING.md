@@ -92,6 +92,6 @@ Go to the GitHub page of your fork, and you should see a prompt to open a Pull R
 
 ## Step 4: Code Review
 
-Your Pull Request will be reviewed by the maintainers. Be prepared to answer questions and make adjustments to your code based on the feedback.
+Your Pull Request will be reviewed by the maintainers against the default branch. Be prepared to answer questions and make adjustments to your code based on the feedback.
 
 Thank you for contributing!

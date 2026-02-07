@@ -26,13 +26,6 @@ This guide provides information for developers contributing to this project.
 
 ## Development Workflow
 
-### Running the Development Environment
-
-To start the development server with hot-reloading for all packages:
-```bash
-bun run dev
-```
-
 ### Making and Committing Changes
 
 1.  **Create a new branch**: `git checkout -b feature/my-awesome-feature`.
@@ -61,4 +54,4 @@ Follow the prompts to select the affected packages and the appropriate version b
 
 ## Submitting a Pull Request
 
-Once your changes are ready, push your branch to your fork and open a Pull Request against the `main` branch of the original repository.
+Once your changes are ready, push your branch to your fork and open a Pull Request against the default branch of the original repository.

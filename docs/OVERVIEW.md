@@ -15,7 +15,8 @@ This repository is a monorepo containing various packages designed to simplify t
 | :--- | :--- |
 | `@frontal-cloud/ai` | AI integration and utilities. |
 | `@frontal-cloud/compute` | Distributed compute capabilities. |
-| `@frontal-cloud/functions`| Serverless functions orchestration. |
+| `@frontal-cloud/functions` | Serverless functions orchestration. |
+| `@frontal-cloud/flags` | Feature flags and configuration. |
+| `@frontal-cloud/logging` | Structured logging utilities. |
+| `@frontal-cloud/notifications` | Notifications delivery and management. |
 | `@frontal-cloud/storage` | Scalable storage interactions. |
-| `@frontal-cloud/notifications` | Scalable notifications interactions. |
-| `@frontal-cloud/logging`| Scalable logger interactions. |

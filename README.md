@@ -6,7 +6,7 @@
 
 # Frontal SDK
 
-A powerful, modular SDK for building high-performance applications with AI, Compute, Functions, and Storage capabilities.
+A powerful, modular SDK for building high-performance applications with AI, Compute, Functions, Flags, Logging, Notifications, and Storage capabilities.
 
 ## Overview
 
@@ -26,9 +26,10 @@ This repository is a monorepo containing various packages designed to simplify t
 | [`@frontal-cloud/ai`](./packages/ai) | AI integration and utilities. | ![npm](https://img.shields.io/npm/v/@frontal-cloud/ai) |
 | [`@frontal-cloud/compute`](./packages/compute) | Distributed compute capabilities. | ![npm](https://img.shields.io/npm/v/@frontal-cloud/compute) |
 | [`@frontal-cloud/functions`](./packages/functions) | Serverless functions orchestration. | ![npm](https://img.shields.io/npm/v/@frontal-cloud/functions) |
+| [`@frontal-cloud/flags`](./packages/flags) | Feature flags and configuration. | ![npm](https://img.shields.io/npm/v/@frontal-cloud/flags) |
+| [`@frontal-cloud/logging`](./packages/logging) | Structured logging utilities. | ![npm](https://img.shields.io/npm/v/@frontal-cloud/logging) |
+| [`@frontal-cloud/notifications`](./packages/notifications) | Notifications delivery and management. | ![npm](https://img.shields.io/npm/v/@frontal-cloud/notifications) |
 | [`@frontal-cloud/storage`](./packages/storage) | Scalable storage interactions. | ![npm](https://img.shields.io/npm/v/@frontal-cloud/storage) |
-| [`@frontal-cloud/notifications`](./packages/notifications) | Scalable notifications interactions. | ![npm](https://img.shields.io/npm/v/@frontal-cloud/notifications) |
-| [`@frontal-cloud/logging`](./packages/logging) | Scalable logger interactions. | ![npm](https://img.shields.io/npm/v/@frontal-cloud/logging) |
 
 ## Getting Started
 
@@ -48,23 +49,27 @@ bun install
 # Initial setup
 bun run setup
 
-# Run dev mode
-bun run dev
+# Build all packages
+bun run build
 
 # Run tests
 bun run test
 
-# Lint code
-bun run lint
+# Lint and format
+bun run lint:ts
+bun run format
 ```
 
 ## Documentation
 
 Detailed documentation for each package can be found in their respective directories:
-- [AI Docs](./packages/ai/README.md)
-- [Compute Docs](./packages/compute/README.md)
-- [Functions Docs](./packages/functions/README.md)
-- [Storage Docs](./packages/storage/README.md)
+- [AI](./packages/ai/README.md)
+- [Compute](./packages/compute/README.md)
+- [Functions](./packages/functions/README.md)
+- [Flags](./packages/flags/README.md)
+- [Logging](./packages/logging/README.md)
+- [Notifications](./packages/notifications/README.md)
+- [Storage](./packages/storage/README.md)
 
 General project documentation is available in the [`docs`](./docs) folder.
 
