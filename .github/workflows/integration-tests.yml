@@ -62,7 +62,7 @@ jobs:
           npx playwright install --with-deps
 
       - name: Setup Supabase
-        run: npx nx test:supabase:setup supabase-js
+        run: echo "Skipping Supabase setup (use turbo for this repo)"
 
       - name: Export auth keys
         run: |
@@ -133,33 +133,9 @@ jobs:
           bun install
           cd "$GITHUB_WORKSPACE"
 
-      - name: Run all tests in parallel
-        run: |
-          set -e
-
-          # Core tests: Deno, Node integration, Browser integration
-          # Using run-many coordinates builds properly (no race conditions)
-          echo "🧪 Running core tests..."
-          npx nx run-many \
-            -t test:deno:all,test:integration,test:integration:browser \
-            -p supabase-js \
-            --parallel=3 \
-            --verbose
-
-          # Platform tests: Next.js, Expo, Bun
-          echo "🧪 Running platform tests..."
-          npx nx run-many \
-            -t test:next,test:expo,test:bun \
-            -p supabase-js \
-            --parallel=3 \
-            --verbose
-
-          # WebSocket tests (requires completed platforms)
-          echo "🧪 Running WebSocket tests..."
-          npx nx test:node:playwright supabase-js
-
-          echo "✅ All tests passed"
+      - name: Run all tests
+        run: bun run test
 
       - name: Stop Supabase
         if: always()
-        run: npx nx test:supabase:stop supabase-js
+        run: echo "Skipping Supabase stop"

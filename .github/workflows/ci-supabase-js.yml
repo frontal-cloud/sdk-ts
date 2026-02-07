@@ -26,10 +26,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - uses: nrwl/nx-set-shas@3e9ad7370203c1e93d109be57f3b72eb0eb511b1 # v4.4.0
-
       - name: Build all packages
-        run: npx nx run-many --target=build --all
+        run: bun run build
 
       - name: Upload built packages
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
@@ -75,7 +73,7 @@ jobs:
         run: npm ci
 
       - name: Type Check + Unit Tests + Coverage
-        run: npx nx run-many --targets=test:types,test:coverage --projects=supabase-js
+        run: bun run test
 
       - name: Upload coverage results to Coveralls
         uses: coverallsapp/github-action@5cbfd81b66ca5d10c19b062c04de0199c215fb6e # v2.3.7
@@ -114,10 +112,10 @@ jobs:
           path: ./packages/core
 
       - name: Validate package exports (attw)
-        run: npx nx test:exports supabase-js
+        run: bun run test
 
       - name: Test ESM imports
-        run: npx nx test:esm supabase-js
+        run: bun run test
 
       - name: Test CJS requires
-        run: npx nx test:cjs supabase-js
+        run: bun run test

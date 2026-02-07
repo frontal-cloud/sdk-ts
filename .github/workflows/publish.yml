@@ -292,7 +292,7 @@ jobs:
       - name: Release canary version
         id: release
         run: |
-          echo "Running nx release..."
+          echo "Running release..."
           npm run release-canary
         env:
           NPM_CONFIG_PROVENANCE: true
