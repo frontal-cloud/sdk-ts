@@ -4,12 +4,12 @@ Thank you for your interest in contributing! We want to make contributing to thi
 
 ## Development Process
 
-1. **Fork the repo** and create your branch from `main`.
+1. **Fork the repo** and create your branch from the default branch.
 2. **Install dependencies**: `bun install`.
 3. **Run setup**: `bun run setup` to build packages.
 4. **Make your changes**.
 5. **Ensure tests pass**: `bun run test`.
-6. **Lint and format**: `bun run lint` and `bun run format`.
+6. **Lint and format**: `bun run lint:ts` and `bun run format`.
 7. **Add a changeset**: `bun run changeset` if your changes should trigger a version bump.
 8. **Submit a Pull Request**.
 
@@ -33,7 +33,7 @@ Types:
 - `ci`: Changes to CI configuration
 - `chore`: Other changes that don't modify src or test files
 
-Scopes: `ai`, `compute`, `functions`, `storage`, `repo`, `scripts`, `docs`.
+Scopes: `ai`, `compute`, `functions`, `storage`, `flags`, `logging`, `notifications`, `repo`, `scripts`, `docs`.
 
 ## Code Style
 

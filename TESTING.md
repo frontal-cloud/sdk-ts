@@ -16,6 +16,7 @@ This will use Turborepo to run tests across all packages in parallel.
 
 ```bash
 bun turbo run test --filter=@frontal-cloud/ai
+# Or any other package: compute, functions, flags, logging, notifications, storage
 ```
 
 ### Watch mode

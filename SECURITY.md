@@ -13,7 +13,7 @@ Currently, we only support the latest version of the SDK. If you are using an ol
 
 We take security seriously and appreciate your help in making this project more secure.
 
-If you find a security vulnerability, please **do not open a public issue**. Instead, please report it privately to the maintainers at [security@example.com](mailto:security@example.com).
+If you find a security vulnerability, please **do not open a public issue**. Instead, please report it privately to the maintainers (see the repository for contact information).
 
 When reporting a vulnerability, please include:
 - A description of the vulnerability.

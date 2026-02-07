@@ -39,7 +39,18 @@ This release includes the following changes across our packages.
 ### 💥 Breaking Changes
 -
 
-## `@frontal-cloud/storage`
+## `@frontal-cloud/flags`
+
+### ✨ New Features
+-
+
+### 🐛 Bug Fixes
+-
+
+### 💥 Breaking Changes
+-
+
+## `@frontal-cloud/logging`
 
 ### ✨ New Features
 -
@@ -61,7 +72,7 @@ This release includes the following changes across our packages.
 ### 💥 Breaking Changes
 -
 
-## `@frontal-cloud/logging`
+## `@frontal-cloud/storage`
 
 ### ✨ New Features
 -

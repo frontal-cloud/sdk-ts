@@ -32,7 +32,7 @@ This will:
 
 ### 3. Publishing
 
-After the versions have been updated and merged into `main`, the packages can be published to NPM:
+After the versions have been updated and merged into the default branch, the packages can be published to npm:
 
 ```bash
 bun run release
@@ -44,4 +44,4 @@ This script will run a build across all packages to ensure they are up-to-date a
 
 - **Atomic Changesets**: Include one changeset per feature or fix.
 - **Clear Descriptions**: Write descriptions that are helpful to users in the changelog.
-- **CI Integration**: Releases are usually handled via a GitHub Action that monitors the `main` branch.
+- **CI Integration**: Releases are usually handled via a GitHub Action that monitors the default branch.

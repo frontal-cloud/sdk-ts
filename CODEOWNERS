@@ -15,6 +15,9 @@
 /packages/ai/ @sdk-team/ai-specialists
 /packages/compute/ @sdk-team/compute-specialists
 /packages/functions/ @sdk-team/functions-specialists
+/packages/flags/ @sdk-team/core
+/packages/logging/ @sdk-team/core
+/packages/notifications/ @sdk-team/core
 /packages/storage/ @sdk-team/storage-specialists
 
 # Scripts
