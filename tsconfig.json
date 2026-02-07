@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./packages/ai"
+    },
+    {
+      "path": "./packages/storage"
+    },
+    {
+      "path": "./packages/functions"
+    },
+    {
+      "path": "./packages/compute"
+    },
+    {
+      "path": "./packages/logging"
+    },
+    {
+      "path": "./packages/notifications"
+    }
+  ]
+}

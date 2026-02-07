@@ -1,0 +1,21 @@
+# Global owners for the entire repository
+* @sdk-team/core @sdk-team/maintainers
+
+# Root configuration files
+/.github/ @sdk-team/maintainers
+/bunfig.toml @sdk-team/maintainers
+/package.json @sdk-team/maintainers
+/tsconfig*.json @sdk-team/maintainers
+/README.md @sdk-team/maintainers
+/docs/* @sdk-team/maintainers
+/LICENSE.md @sdk-team/maintainers
+/CODEOWNERS @sdk-team/maintainers
+
+# Core packages
+/packages/ai/ @sdk-team/ai-specialists
+/packages/compute/ @sdk-team/compute-specialists
+/packages/functions/ @sdk-team/functions-specialists
+/packages/storage/ @sdk-team/storage-specialists
+
+# Scripts
+/scripts/ @sdk-team/maintainers

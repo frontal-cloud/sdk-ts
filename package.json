@@ -1,0 +1,68 @@
+{
+  "name": "@frontal-cloud/root",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Frontal Cloud JavaScript/Typescript SDK Monorepo",
+  "keywords": [
+    "javascript",
+    "typescript",
+    "sdk",
+    "monorepo",
+    "frontal",
+    "frontal-labs",
+    "frontal-cloud"
+  ],
+  "homepage": "https://github.com/frontal-cloud/sdk-ts",
+  "bugs": "https://github.com/frontal-cloud/sdk-ts/issues",
+  "license": "MIT",
+  "author": "Frontal Labs",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frontal-cloud/sdk-ts.git",
+    "directory": "packages/root"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint -- --fix",
+    "format": "node node_modules/@frontal/ts-linter/dist/main.js format",
+    "format:check": "node node_modules/@frontal/ts-linter/dist/main.js check",
+    "lint:ts": "node node_modules/@frontal/ts-linter/dist/main.js check",
+    "test": "turbo run test",
+    "test:watch": "turbo run test -- --watch",
+    "check-types": "turbo run check-types",
+    "clean": "turbo run clean && bun run clean:workspaces",
+    "clean:workspaces": "bun scripts/clean.sh",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "bun run build && changeset publish",
+    "prepare": "husky",
+    "setup": "bun scripts/setup.sh"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.14",
+    "@changesets/cli": "^2.27.12",
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
+    "@frontal/ts-linter": "git@github.com:frontal-labs/ts-linter.git",
+    "husky": "^9.1.7",
+    "turbo": "^2.4.2",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=18",
+    "bun": ">=1.3.8"
+  },
+  "packageManager": "bun@1.3.8",
+  "workspaces": [
+    "packages/*"
+  ]
+}

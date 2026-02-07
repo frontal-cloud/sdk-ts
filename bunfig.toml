@@ -1,0 +1,10 @@
+[install]
+# Install dependencies using Bun
+engine-strict = true
+
+[test]
+# Test runner configuration
+root = "."
+
+[run]
+# Run script configuration

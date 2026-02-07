@@ -1,0 +1,13 @@
+echo "🔍 Running pre-commit checks..."
+
+bun run lint || {
+  echo "❌ Linting failed. Please fix the issues before committing."
+  exit 1
+}
+
+bun run format:check || {
+  echo "❌ Formatting check failed. Please run 'bun run format' and try again."
+  exit 1
+}
+
+echo "✅ Pre-commit checks passed!"
