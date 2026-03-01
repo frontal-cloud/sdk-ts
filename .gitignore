@@ -19,6 +19,12 @@ bun.lockb
 
 # Testing
 coverage
+test-results
+*.lcov
+
+# Vitest
+node_modules/.vitest
+.vitest
 
 # Turbo
 .turbo
