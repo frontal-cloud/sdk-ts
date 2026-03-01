@@ -32,7 +32,7 @@ describe('Frontal Cloud SDK Integration', () => {
       ];
 
       const results = await Promise.allSettled(packages);
-      
+
       // All packages should import successfully
       results.forEach((result, index) => {
         expect(result.status).toBe('fulfilled');
@@ -56,18 +56,29 @@ describe('Frontal Cloud SDK Integration', () => {
 
       // All packages should export a client class or main function
       const packages = [ai, compute, functions, flags, logging, notifications, storage];
-      
-      packages.forEach((pkg, index) => {
-        const packageName = ['ai', 'compute', 'functions', 'flags', 'logging', 'notifications', 'storage'][index];
-        
+
+      packages.forEach((pkg) => {
         // Check that package has default export or named exports
         expect(Object.keys(pkg).length).toBeGreaterThan(0);
-        
-        // Check for common patterns (client, config, etc.)
+
+        // Check for common patterns (Client classes, config functions, etc.)
         const exports = Object.keys(pkg);
-        const hasClient = exports.some(exp => exp.toLowerCase().includes('client'));
-        const hasConfig = exports.some(exp => exp.toLowerCase().includes('config'));
-        
+        const hasClient = exports.some(exp =>
+          exp.toLowerCase().includes('client') ||
+          exp === 'AI' ||
+          exp === 'Storage' ||
+          exp === 'Compute' ||
+          exp === 'Functions' ||
+          exp === 'Logging' ||
+          exp === 'Logger' ||
+          exp === 'Notifications' ||
+          exp === 'Flags'
+        );
+        const hasConfig = exports.some(exp =>
+          exp.toLowerCase().includes('config') ||
+          exp === 'configure'
+        );
+
         // At least one of these patterns should exist
         expect(hasClient || hasConfig).toBe(true);
       });
@@ -78,10 +89,10 @@ describe('Frontal Cloud SDK Integration', () => {
     it('should handle environment variables consistently', () => {
       // Test that all packages respect environment variables
       const originalApiKey = process.env.FRONTAL_CLOUD_API_KEY;
-      
+
       try {
         process.env.FRONTAL_CLOUD_API_KEY = 'test-integration-key';
-        
+
         // This would be tested by individual package tests
         // Here we verify the environment is set correctly
         expect(process.env.FRONTAL_CLOUD_API_KEY).toBe('test-integration-key');
@@ -115,10 +126,10 @@ describe('Frontal Cloud SDK Integration', () => {
     it('should handle missing API keys gracefully', () => {
       // Test error handling when API key is missing
       const originalApiKey = process.env.FRONTAL_CLOUD_API_KEY;
-      
+
       try {
         delete process.env.FRONTAL_CLOUD_API_KEY;
-        
+
         // This would be tested by individual packages
         // Here we verify the environment is properly unset
         expect(process.env.FRONTAL_CLOUD_API_KEY).toBeUndefined();
@@ -133,7 +144,7 @@ describe('Frontal Cloud SDK Integration', () => {
       // Test that network errors are handled consistently
       const networkError = new Error('Network timeout');
       networkError.name = 'NetworkError';
-      
+
       expect(networkError.message).toBe('Network timeout');
       expect(networkError.name).toBe('NetworkError');
     });
@@ -154,7 +165,7 @@ describe('Frontal Cloud SDK Integration', () => {
 
       // Each package should have type exports
       const packages = [ai, compute, functions, flags, logging, notifications, storage];
-      
+
       packages.forEach((pkg) => {
         // Check that package exports are defined
         expect(pkg).toBeDefined();
@@ -167,7 +178,7 @@ describe('Frontal Cloud SDK Integration', () => {
     it('should initialize packages within reasonable time', async () => {
       // Test package initialization performance
       const startTime = Date.now();
-      
+
       await Promise.all([
         import('@frontal-cloud/ai'),
         import('@frontal-cloud/compute'),
@@ -177,10 +188,10 @@ describe('Frontal Cloud SDK Integration', () => {
         import('@frontal-cloud/notifications'),
         import('@frontal-cloud/storage'),
       ]);
-      
+
       const endTime = Date.now();
       const initTime = endTime - startTime;
-      
+
       // All packages should initialize within 1 second
       expect(initTime).toBeLessThan(1000);
     });
