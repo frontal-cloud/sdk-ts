@@ -36,29 +36,70 @@ This repository is a monorepo containing various packages designed to simplify t
 ### Prerequisites
 
 - [Bun](https://bun.sh) (v1.3.8 or later)
+- [Node.js](https://nodejs.org) (v18 or later) - for compatibility
+- [Git](https://git-scm.com) - for version control
 
-### Installation
+### Development Setup
+
+#### Option 1: Standard Setup
 
 ```bash
+# Clone the repository
+git clone https://github.com/frontal-cloud/sdk-ts.git
+cd sdk-ts
+
+# Install dependencies
 bun install
-```
 
-### Development
-
-```bash
 # Initial setup
 bun run setup
+```
 
+#### Option 2: Nix Development Environment
+
+```bash
+# Enter Nix development shell
+nix develop
+
+# Or use flakes directly
+nix shell
+```
+
+### Development Commands
+
+```bash
 # Build all packages
 bun run build
 
-# Run tests
+# Run tests (with Vitest)
 bun run test
+bun run test:watch
+bun run test:coverage
 
 # Lint and format
-bun run lint:ts
+bun run lint
+bun run lint:fix
 bun run format
+
+# Type checking
+bun run type-check
+
+# Clean build artifacts
+bun run clean
 ```
+
+### Environment Configuration
+
+Copy `.env.example` to `.env` and configure your environment:
+
+```bash
+cp .env.example .env
+```
+
+Key environment variables:
+- `FRONTAL_CLOUD_API_KEY` - Your API key
+- `NODE_ENV` - Environment (development/test/production)
+- `DEBUG` - Enable debug logging (optional)
 
 ## Documentation
 
