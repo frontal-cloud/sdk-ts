@@ -24,5 +24,17 @@
 		{
 			"path": "./packages/flags"
 		}
-	]
+	],
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@frontal-cloud/ai": ["packages/ai/src"],
+			"@frontal-cloud/compute": ["packages/compute/src"],
+			"@frontal-cloud/flags": ["packages/flags/src"],
+			"@frontal-cloud/functions": ["packages/functions/src"],
+			"@frontal-cloud/logging": ["packages/logging/src"],
+			"@frontal-cloud/notifications": ["packages/notifications/src"],
+			"@frontal-cloud/storage": ["packages/storage/src"]
+		}
+	}
 }
